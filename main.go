@@ -38,7 +38,7 @@ func main() {
 	connection := "user=postgres password=nodirbek dbname=homework sslmode=disable"
 	db, err := sql.Open("postgres", connection)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	_, err = db.Exec("CREATE TABLE IF NOT EXISTS students(id SERIAL PRIMARY KEY, name VARCHAR, age INT)")
